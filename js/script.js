@@ -1,6 +1,8 @@
 window.addEventListener('load', start);
 
 function start() {
+  modifyColour();
+
   redColourRange = document.querySelector('#redColourRange');
   greenColourRange = document.querySelector('#greenColourRange');
   blueColourRange = document.querySelector('#blueColourRange');
@@ -39,23 +41,22 @@ function colourHandlerRange() {
   var id = event.target.id;
   var newValue = event.target.value;
   assignTextValue();
-  modifyBoxColour();
+  modifyColour();
 }
 
 function colourHandlerNumber() {
   function assignRangeValue() {
     switch (id) {
       case 'redColourNumber':
-        // if (newValue > 255) {
-        //   newValue = 255;
-        //   redColourNumber = newValue;
-        // }
+        redColourNumber.value = newValue;
         redColourRange.value = newValue;
         break;
       case 'greenColourNumber':
+        greenColourNumber.value = newValue;
         greenColourRange.value = newValue;
         break;
       case 'blueColourNumber':
+        blueColourNumber.value = newValue;
         blueColourRange.value = newValue;
         break;
     }
@@ -63,21 +64,40 @@ function colourHandlerNumber() {
 
   var id = event.target.id;
   var newValue = event.target.value;
+  if (newValue > 255) {
+    newValue = 255;
+  }
+  if (newValue === '') {
+    newValue = 0;
+  }
+  console.log(event);
   assignRangeValue();
-  modifyBoxColour();
+  modifyColour();
 }
 
-function modifyBoxColour() {
+function modifyColour() {
   box = document.querySelector('.box');
 
-  rgbValue =
-    'rgb(' +
-    redColourRange.value +
-    ', ' +
-    greenColourRange.value +
-    ', ' +
-    blueColourRange.value +
-    ')';
+  var r = redColourRange.value;
+  var g = greenColourRange.value;
+  var b = blueColourRange.value;
 
-  box.style.background = rgbValue;
+  newRGBValue = '(' + r + ', ' + g + ', ' + b + ')';
+
+  box.style.background = 'rgb' + newRGBValue;
+  document.querySelector('#rgb-value').innerHTML = newRGBValue;
+  document.querySelector('#hex-value').innerHTML = rgbToHex(r, g, b);
+}
+
+function rgbToHex(r, g, b) {
+  function decToHex(decimal) {
+    var hex = decimal.toString(16);
+    return hex.length == 1 ? '0' + hex : hex;
+  }
+
+  rHex = decToHex(parseInt(r));
+  gHex = decToHex(parseInt(g));
+  bHex = decToHex(parseInt(b));
+
+  return '#' + rHex + gHex + bHex;
 }
