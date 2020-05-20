@@ -5,16 +5,19 @@ function start() {
   greenColourRange = document.querySelector('#greenColourRange');
   blueColourRange = document.querySelector('#blueColourRange');
 
+  redColourNumber = document.querySelector('#redColourNumber');
+  greenColourNumber = document.querySelector('#greenColourNumber');
+  blueColourNumber = document.querySelector('#blueColourNumber');
+
   colourRange = document.getElementsByClassName('rangeInput');
   colourNumber = document.getElementsByClassName('textInput');
 
   for (var i = 0; i < colourRange.length; i++) {
-    colourRange[i].addEventListener('change', colourHandlerRange);
+    colourRange[i].addEventListener('input', colourHandlerRange);
   }
 
   for (var i = 0; i < colourNumber.length; i++) {
-    colourNumber[i].addEventListener('change', colourHandlerNumber);
-    colourNumber[i].addEventListener('keyup', colourHandlerNumber);
+    colourNumber[i].addEventListener('input', colourHandlerNumber);
   }
 }
 
@@ -43,6 +46,10 @@ function colourHandlerNumber() {
   function assignRangeValue() {
     switch (id) {
       case 'redColourNumber':
+        // if (newValue > 255) {
+        //   newValue = 255;
+        //   redColourNumber = newValue;
+        // }
         redColourRange.value = newValue;
         break;
       case 'greenColourNumber':
