@@ -1,4 +1,5 @@
 body {
+  font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,18 +11,18 @@ h1 {
   text-align: center;
   font-size: 3rem;
   font-weight: bold;
+  color: #464646;
 }
 
 .rangeInput {
   width: 200px;
   height: 15px;
   -webkit-appearance: none;
-  background-color: #111;
+  background-color: #464646;
   vertical-align: middle;
   outline: none;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 1);
 }
 
 .textInput {
@@ -30,14 +31,7 @@ h1 {
   text-align: center;
   border-radius: 10px;
   font-weight: bold;
-
-  /* box-sizing:  ; */
-  /* margin: 80px 100px; */
-  /* -webkit-appearance: none; */
-  /* background-color: #111; */
-  /* outline: none; */
-  /* overflow: hidden; */
-  /* box-shadow: inset 0 0 5px rgba(0,0,0,1); */
+  color: #464646;
 }
 #redColourNumber {
   border: 2px solid #f00;
@@ -58,8 +52,8 @@ h1 {
   border-radius: 50%;
   background-color: #f00;
   cursor: pointer;
-  border: 4px solid #333;
-  box-shadow: -407px 0 0 400px #f00;
+  border: 5px solid #ffffff;
+  box-shadow: -408px 0 0 400px #f00;
 }
 
 #greenColourRange::-webkit-slider-thumb {
@@ -69,8 +63,8 @@ h1 {
   border-radius: 50%;
   background-color: #0f0;
   cursor: pointer;
-  border: 4px solid #333;
-  box-shadow: -407px 0 0 400px #0f0;
+  border: 5px solid #ffffff;
+  box-shadow: -408px 0 0 400px #0f0;
 }
 
 #blueColourRange::-webkit-slider-thumb {
@@ -80,43 +74,56 @@ h1 {
   border-radius: 50%;
   background-color: #00f;
   cursor: pointer;
-  border: 4px solid #333;
-  box-shadow: -407px 0 0 400px #00f;
+  border: 5px solid #ffffff;
+  box-shadow: -408px 0 0 400px #00f;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+#rgb-hex-values {
+  min-width: 225 px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+#rgb-hex-values div {
+  padding: 3px;
 }
 
 .box {
   margin: 10px;
-  width: 300px;
+  width: 342px;
   height: 150px;
-  background: rgb(0, 0, 0);
   border-style: solid;
   border-width: 2px;
   border-radius: 15px;
-  border-color: #333;
+  border-color: #464646;
 }
 
 .rgbChoice {
   margin: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  color: #464646;
 }
 
 label {
   display: inline-block;
   width: 80px;
   text-align: left;
+  font-weight: bold;
 }
 
-​ #footer-p {
-  font-size: 3rem;
+footer {
+  font-size: 0.8rem;
   font-weight: bold;
-  /* color: #2e2e83; */
-  /* margin-top: 60px; */
+  color: #464646;
 }
 
-/* footer a {
-  text-decoration: none;
-  font-weight: bold;
-  color: #2e2e83;
-} */
+#heart-color {
+  color: red;
+}
