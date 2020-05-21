@@ -2,9 +2,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  /* background-color: #ffffff; */
 }
 
 h1 {
@@ -84,18 +82,15 @@ h1 {
 }
 
 #rgb-hex-values {
-  min-width: 225 px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
 }
 
 #rgb-hex-values div {
-  padding: 3px;
+  padding: 8px;
 }
 
 .box {
-  margin: 10px;
   width: 342px;
   height: 150px;
   border-style: solid;
